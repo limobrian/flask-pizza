@@ -1,0 +1,3 @@
+Dear {{user.username}},
+Welcome to Pizza Tamu. You can order the most yummy Pizza with us.We also offer delivery services.
+Good to have you.

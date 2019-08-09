@@ -1,0 +1,123 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+
+{% block styles%}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PIZZA</title>
+    <!-- jquery-2.2.0 -->
+    <!-- <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    bootstrap w/ optional theme
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    my css and js
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/scripts.js"></script> -->
+  </head>
+  <body>
+    <div class="header page-header text-center">
+      <h1>Pizza Tamu</h1>
+    </div>
+    <div class="container">
+      <div class="order-pizza-input initially-hidden">
+        <h3>Add a pizza to your order.</h3>
+        <div class="row">
+        <form>
+          <div class="size form-group col-md-3">
+            <h4>Pie Size:</h4>
+            <label class="checkbox-inline"><input type="radio" name="pie-size" value="small"> Small ($7)</label>
+            <label class="checkbox-inline"><input type="radio" name="pie-size" value="medium" checked> Medium ($9)</label>
+            <label class="checkbox-inline"><input type="radio" name="pie-size" value="large"> Large ($11)</label>
+            <label class="checkbox-inline"><input type="radio" name="pie-size" value="extra large"> Extra Large ($13)</label>
+          </div>
+          <div class="meat-toppings  form-group col-md-3">
+            <h4>Meats: ($1.25 each) </h4>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Pepperoni">Pepperoni
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Sausage">Sausage
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Ham">Ham
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Meatball">Meatball
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Hamburger">Hamburger
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Bacon">Bacon
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Grilled Chicken">Grilled Chicken
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="meat-toppings" value="Meat Surprise">Meat Surprise
+            </label>
+          </div>
+          <div class="veg-toppings  form-group col-md-3">
+            <h4>Veggies: ($0.75 each) </h4>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Olives">Olives
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Tomatoes">Tomatoes
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Onions">Onions
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Green Peppers">Green Peppers
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Mushrooms">Mushrooms
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Basil">Basil
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Spinach">Spinach
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Banana Peppers">Banana Peppers
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" name="veg-toppings" value="Pineapple">Pineapple
+            </label>
+          </div>
+          <div class="cheese  form-group">
+            <h4>Cheese:</h4>
+            <label class="checkbox"><input type="radio" name="cheese-options" value="regular" checked>  Regular</label>
+            <label class="checkbox"><input type="radio" name="cheese-options" value="extra">  Extra Cheese <em>(add $1)</em></label>
+            <label class="checkbox"><input type="radio" name="cheese-options" value="none">  No Cheese</label>
+          </div>
+          <button type="submit" class="btn btn-success">Add Pizza</button>
+        </form>
+        </div>
+      </div>
+      <div class="order-summary initially-hidden">
+        <h3>Your order.</h3>
+        <p>Click on a pizza to view and hide more information.</p>
+        <div class="pizza-list"></div>
+        <h3>Total Cost: <span id="pizza-list-total-cost"></span></h3>
+        <button id="add-another-pizza" class="btn btn-success">Add another Pizza</button>
+        <button id="checkout-order" class="btn btn-success">Checkout Out</button>
+      </div>
+      <div class="checked-out  initially-hidden">
+        <h3>Your order is on its way!</h3>
+        <p>Click below to place a new order.</p>
+        <button type="button" class="btn btn-success" id="new-order">New Order</button>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}
